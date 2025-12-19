@@ -13,10 +13,10 @@
 
     <Authors>Syon Foppen</Authors>
     <Company>Syon</Company>
-    <Product>dotnet-distributed-command-bus</Product>
+    <Product>dotnet-grpc-command-bus</Product>
     <RepositoryType>git</RepositoryType>
 
-    <RepositoryUrl>https://github.com/syonfoppen/dotnet-distributed-command-bus</RepositoryUrl>
+    <RepositoryUrl>https://github.com/syonfoppen/dotnet-grpc-command-bus</RepositoryUrl>
     <Copyright>Copyright (c) 2025 Syon Foppen</Copyright>
 
     <PackageId Condition="'$(PackageId)' == ''">$(MSBuildProjectName)</PackageId>
