@@ -19,7 +19,7 @@ public sealed class GrpcEndToEndTests
     [Fact]
     public async Task GrpcCommandBus_EndToEnd_Works()
     {
-        // English comment: gRPC over plaintext HTTP/2 requires this switch for Grpc.Net.Client.
+        // gRPC over plaintext HTTP/2 requires this switch for Grpc.Net.Client.
         AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 
         await using var host = await StartGrpcServerAsync();
@@ -28,10 +28,10 @@ public sealed class GrpcEndToEndTests
 
         var services = new ServiceCollection();
 
-        // English comment: Core services and contracts registry.
+        // Core services and contracts registry.
         services.AddCommandBusCore(Assembly.GetExecutingAssembly());
 
-        // English comment: Register the gRPC dispatcher with the server address.
+        // Register the gRPC dispatcher with the server address.
         services.AddCommandBusGrpcClient(new Uri(address));
 
         await using var provider = services.BuildServiceProvider();
@@ -59,7 +59,7 @@ public sealed class GrpcEndToEndTests
             {
                 web.UseKestrel(k =>
                 {
-                    // English comment: gRPC requires HTTP/2.
+                    // gRPC requires HTTP/2.
                     k.ListenLocalhost(port, o => o.Protocols = HttpProtocols.Http2);
                 });
 
@@ -67,10 +67,10 @@ public sealed class GrpcEndToEndTests
                 {
                     services.AddGrpc();
 
-                    // English comment: Register contracts (commands).
+                    // Register contracts (commands).
                     services.AddCommandBusCore(Assembly.GetExecutingAssembly());
 
-                    // English comment: Register handlers from THIS test assembly.
+                    // Register handlers from THIS test assembly.
                     services.AddCommandHandlersFromAssembly(typeof(GrpcEndToEndTests).Assembly);
                 });
 
@@ -92,7 +92,7 @@ public sealed class GrpcEndToEndTests
 
     private static int GetFreeTcpPort()
     {
-        // English comment: Ask the OS for a free port.
+        // Ask the OS for a free port.
         var listener = new TcpListener(IPAddress.Loopback, 0);
         listener.Start();
         var port = ((IPEndPoint)listener.LocalEndpoint).Port;
@@ -120,7 +120,7 @@ public sealed class GrpcEndToEndTests
         }
     }
 
-    // English comment: Minimal handler used by the integration test.
+    // Minimal handler used by the integration test.
     private sealed class CreateCustomerHandler : ICommandHandler<CreateCustomerCommand>
     {
         public Task<DispatchResult> HandleAsync(
@@ -128,7 +128,7 @@ public sealed class GrpcEndToEndTests
             CommandContext context,
             CancellationToken ct)
         {
-            // English comment: Real apps would persist changes here.
+            // Real apps would persist changes here.
             if (string.IsNullOrWhiteSpace(command.CustomerId))
                 return Task.FromResult(DispatchResult.Fail(context.CommandId, "VALIDATION", "CustomerId is required"));
 
