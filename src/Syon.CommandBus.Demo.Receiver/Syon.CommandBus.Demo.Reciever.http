@@ -1,0 +1,6 @@
+@Syon.CommandBus.Demo.Reciever_HostAddress = http://localhost:5053
+
+GET {{Syon.CommandBus.Demo.Reciever_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

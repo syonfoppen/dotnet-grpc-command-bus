@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package syon.commandbus.v1;
+
+option csharp_namespace = "Syon.CommandBus.Grpc.V1";
+
+service CommandBusPipe {
+  rpc Execute (CommandEnvelope) returns (CommandResult);
+}
+
+message CommandEnvelope {
+  string command_id = 1;
+  string correlation_id = 2;
+  string idempotency_key = 3;
+
+  string command_name = 10;
+  int32 version = 11;
+
+  string payload_json = 20;
+}
+
+message CommandResult {
+  string command_id = 1;
+
+  enum Status {
+    STATUS_UNSPECIFIED = 0;
+    ACCEPTED = 1;
+    SUCCEEDED = 2;
+    FAILED = 3;
+  }
+
+  Status status = 10;
+  string error_code = 20;
+  string error_message = 21;
+}
