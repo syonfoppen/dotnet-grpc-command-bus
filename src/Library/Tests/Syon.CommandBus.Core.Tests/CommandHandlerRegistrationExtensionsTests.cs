@@ -28,7 +28,7 @@ public sealed class CommandHandlerRegistrationExtensionsTests
         services.AddCommandHandlersFromAssembly(typeof(TestHandler).Assembly);
         services.AddCommandHandlersFromAssembly(typeof(TestHandler).Assembly);
 
-        // English comment: Only one registration for ICommandHandler<TestCommand> -> TestHandler is expected.
+        // Only one registration for ICommandHandler<TestCommand> -> TestHandler is expected.
         var count = services.Count(d =>
             d.ServiceType == typeof(ICommandHandler<TestCommand>) &&
             d.ImplementationType == typeof(TestHandler));

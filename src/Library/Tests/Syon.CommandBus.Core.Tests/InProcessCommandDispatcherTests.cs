@@ -40,7 +40,7 @@ public sealed class InProcessCommandDispatcherTests
 
     private sealed class FixedCommandIdGenerator : ICommandIdGenerator
     {
-        // English comment: Deterministic IDs make tests stable.
+        // Deterministic IDs make tests stable.
         public string NewId() => "fixed-id";
     }
 
