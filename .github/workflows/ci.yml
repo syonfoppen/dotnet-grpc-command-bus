@@ -1,5 +1,6 @@
 name: ci
 
+
 on:
   push:
     branches: ["main", "master"]
@@ -9,6 +10,9 @@ on:
 permissions:
   contents: read
 
+env:
+  NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+
 jobs:
   build-test:
     runs-on: ubuntu-latest
@@ -16,7 +20,6 @@ jobs:
     defaults:
       run:
         working-directory: src
-
 
     steps:
       - name: Checkout
@@ -30,13 +33,13 @@ jobs:
       - name: Cache NuGet packages
         uses: actions/cache@v4
         with:
-          path: ~/.nuget/packages
-          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj', '**/*.fsproj', '**/*.props', '**/*.targets', '**/NuGet.config', '**/global.json') }}
+          path: ${{ env.NUGET_PACKAGES }}
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/packages.lock.json', '**/NuGet.config', '**/global.json') }}
           restore-keys: |
             nuget-${{ runner.os }}-
 
       - name: Restore
-        run: dotnet restore
+        run: dotnet restore --locked-mode
 
       - name: Build
         run: dotnet build --no-restore -c Release
