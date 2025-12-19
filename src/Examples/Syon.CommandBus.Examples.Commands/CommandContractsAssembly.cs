@@ -1,4 +1,4 @@
-﻿namespace Syon.CommandBus.Shared;
+﻿namespace Syon.CommandBus.Examples.Commands;
 
 public sealed class CommandContractsAssembly
 {

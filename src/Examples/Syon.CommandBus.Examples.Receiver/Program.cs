@@ -1,6 +1,6 @@
 using Syon.CommandBus.Core;
+using Syon.CommandBus.Examples.Commands;
 using Syon.CommandBus.Grpc;
-using Syon.CommandBus.Shared;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);

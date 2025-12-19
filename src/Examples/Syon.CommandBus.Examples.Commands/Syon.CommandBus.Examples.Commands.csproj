@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Syon.CommandBus.Abstractions\Syon.CommandBus.Abstractions.csproj" />
+    <ProjectReference Include="..\..\Library\Syon.CommandBus.Abstractions\Syon.CommandBus.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

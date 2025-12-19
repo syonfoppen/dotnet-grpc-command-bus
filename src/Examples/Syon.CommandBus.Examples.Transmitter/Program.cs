@@ -1,12 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Syon.CommandBus.Abstractions;
+using Syon.CommandBus.Examples.Commands;
 using Syon.CommandBus.Grpc;
-using Syon.CommandBus.Shared;
-using Syon.CommandBus.Shared.Commands;
 
-namespace Syon.CommandBus.Demo.Transmitter;
+namespace Syon.CommandBus.Examples.Transmitter;
 
-internal class Program
+internal static class Program
 {
     static async Task Main(string[] args)
     {

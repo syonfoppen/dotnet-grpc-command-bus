@@ -1,11 +1,14 @@
 <Solution>
-  <Folder Name="/Demo/">
-    <Project Path="Syon.CommandBus.Demo.Receiver/Syon.CommandBus.Demo.Receiver.csproj" />
-    <Project Path="Syon.CommandBus.Demo.Transmitter/Syon.CommandBus.Demo.Transmitter.csproj" />
-    <Project Path="Syon.CommandBus.Shared/Syon.CommandBus.Shared.csproj" />
+  <Folder Name="/Examples/">
+    <Project Path="Examples/Syon.CommandBus.Examples.Commands/Syon.CommandBus.Examples.Commands.csproj" />
+    <Project Path="Examples/Syon.CommandBus.Examples.Receiver/Syon.CommandBus.Examples.Receiver.csproj" />
+    <Project Path="Examples/Syon.CommandBus.Examples.Transmitter/Syon.CommandBus.Examples.Transmitter.csproj" />
   </Folder>
-  <Project Path="Syon.CommandBus.Abstractions/Syon.CommandBus.Abstractions.csproj" />
-  <Project Path="Syon.CommandBus.Core/Syon.CommandBus.Core.csproj" />
-  <Project Path="Syon.CommandBus.Grpc/Syon.CommandBus.Grpc.csproj" />
-  <Project Path="Syon.CommandBus.InProcess/Syon.CommandBus.InProcess.csproj" />
+  <Folder Name="/Tests/">
+    <Project Path="Library/Tests/Syon.CommandBus.Core.Tests/Syon.CommandBus.Core.Tests.csproj" Id="cde99bb4-230c-42fc-9862-0465a9481300" />
+  </Folder>
+  <Project Path="Library/Syon.CommandBus.Abstractions/Syon.CommandBus.Abstractions.csproj" />
+  <Project Path="Library/Syon.CommandBus.Core/Syon.CommandBus.Core.csproj" />
+  <Project Path="Library/Syon.CommandBus.Grpc/Syon.CommandBus.Grpc.csproj" />
+  <Project Path="Library/Syon.CommandBus.InProcess/Syon.CommandBus.InProcess.csproj" />
 </Solution>

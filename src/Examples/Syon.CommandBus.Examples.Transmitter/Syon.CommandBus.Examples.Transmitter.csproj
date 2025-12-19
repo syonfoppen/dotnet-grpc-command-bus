@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Grpc.Net.Client" Version="2.*" />
+		<PackageReference Include="Google.Protobuf" Version="3.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Library\Syon.CommandBus.Abstractions\Syon.CommandBus.Abstractions.csproj" />
+	  <ProjectReference Include="..\..\Library\Syon.CommandBus.Core\Syon.CommandBus.Core.csproj" />
+	  <ProjectReference Include="..\..\Library\Syon.CommandBus.Grpc\Syon.CommandBus.Grpc.csproj" />
+	  <ProjectReference Include="..\Syon.CommandBus.Examples.Commands\Syon.CommandBus.Examples.Commands.csproj" />
+	</ItemGroup>
+
+</Project>

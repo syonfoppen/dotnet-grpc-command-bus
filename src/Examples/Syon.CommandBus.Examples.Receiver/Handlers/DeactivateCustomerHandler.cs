@@ -1,7 +1,7 @@
 ﻿using Syon.CommandBus.Abstractions;
-using Syon.CommandBus.Shared.Commands;
+using Syon.CommandBus.Examples.Commands;
 
-namespace Syon.CommandBus.Demo.Receiver.Handlers;
+namespace Syon.CommandBus.Examples.Receiver.Handlers;
 
 public sealed class DeactivateCustomerHandler
     : ICommandHandler<DeactivateCustomerCommand>
