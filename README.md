@@ -1,4 +1,4 @@
-# dotnet-command-bus
+# dotnet-distributed-command-bus
 
 A lightweight command bus for .NET that supports both in-process and gRPC-based command dispatch,
 while keeping application code fully transport-agnostic.

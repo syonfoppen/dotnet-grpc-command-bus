@@ -1,6 +1,5 @@
 <Project>
   <PropertyGroup>
-    <!-- English comment: Build defaults -->
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -14,9 +13,9 @@
 
     <Authors>Syon Foppen</Authors>
     <Company>Syon</Company>
-    <Product>dotnet-command-bus</Product>
+    <Product>dotnet-distributed-command-bus</Product>
     <RepositoryType>git</RepositoryType>
-    <!-- Replace with your repo URL -->
+
     <RepositoryUrl>https://github.com/syonfoppen/dotnet-distributed-command-bus</RepositoryUrl>
     <Copyright>Copyright (c) 2025 Syon Foppen</Copyright>
 
