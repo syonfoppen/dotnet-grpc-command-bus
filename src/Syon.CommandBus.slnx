@@ -6,6 +6,7 @@
   </Folder>
   <Folder Name="/Tests/">
     <Project Path="Library/Tests/Syon.CommandBus.Core.Tests/Syon.CommandBus.Core.Tests.csproj" Id="cde99bb4-230c-42fc-9862-0465a9481300" />
+    <Project Path="Library/Tests/Syon.CommandBus.IntegrationTests/Syon.CommandBus.IntegrationTests.csproj" Id="7407364d-36b8-4c06-9252-23fe2f467bb4" />
   </Folder>
   <Project Path="Library/Syon.CommandBus.Abstractions/Syon.CommandBus.Abstractions.csproj" />
   <Project Path="Library/Syon.CommandBus.Core/Syon.CommandBus.Core.csproj" />
