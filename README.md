@@ -1,4 +1,5 @@
 # dotnet-grpc-command-bus
+[![ci](https://github.com/syonfoppen/dotnet-grpc-command-bus/actions/workflows/ci.yml/badge.svg)](https://github.com/syonfoppen/dotnet-grpc-command-bus/actions/workflows/ci.yml)
 
 A lightweight command bus for .NET that supports both in-process and gRPC-based command dispatch,
 while keeping application code fully transport-agnostic.
@@ -53,9 +54,6 @@ Switching between in-process and gRPC dispatch is a configuration change.
 
 - **CommandBus.Grpc**
   gRPC dispatcher and server endpoint
-
-- **CommandBus.Shared**
-  Example shared command contracts
 
 ---
 
