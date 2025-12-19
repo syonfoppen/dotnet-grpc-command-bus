@@ -119,6 +119,26 @@ public sealed class CommandBusGrpcService : CommandBusPipe.CommandBusPipeBase
                 ErrorMessage = result.ErrorMessage ?? ""
             };
         }
+        catch (JsonException)
+        {
+            return new CommandResult
+            {
+                CommandId = request.CommandId,
+                Status = CommandResult.Types.Status.Failed,
+                ErrorCode = "INVALID_PAYLOAD",
+                ErrorMessage = "Payload could not be deserialized."
+            };
+        }
+        catch (InvalidOperationException ex) when (ex.Message.StartsWith("Unknown command:", StringComparison.Ordinal))
+        {
+            return new CommandResult
+            {
+                CommandId = request.CommandId,
+                Status = CommandResult.Types.Status.Failed,
+                ErrorCode = "UNKNOWN_COMMAND",
+                ErrorMessage = ex.Message
+            };
+        }
         catch (Exception ex)
         {
             // Treat unexpected failures as transport-level failures with a stable error code.
