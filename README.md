@@ -54,9 +54,6 @@ Switching between in-process and gRPC dispatch is a configuration change.
 - **CommandBus.Grpc**
   gRPC dispatcher and server endpoint
 
-- **CommandBus.Shared**
-  Example shared command contracts
-
 ---
 
 ## Defining a Command
